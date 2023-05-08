@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome</title>
+        <meta charset="utf-8">
+        <meta lang="ru">
+    </head>
+    <body> 
+        <h3>try...</h3>
+        <!-- <form>
+            <lable>Name</lable>
+            <input type="text" name="firstName">
+            <button type="submit">show</button>
+        </form>
+        <script>
+            var firstName = document.getElementsByName("firstName")
+            // alert(firstName)
+            console.log(firstName)
+        </script> -->
+        <script>
+            let data  = fetch('http://localhost:8080/films/getn/java') // обращение по адресу как в посмане
+            .then(response => response.json()) // переделывает данные в json
+            // .then(clients => alert(clients)); // выводит список из object Object
+            .then(clients => console.log(clients)) // нормально выводит в консоль браузера и пошел запрос через hibernate
+        </script>
+    </body>
+</html>
