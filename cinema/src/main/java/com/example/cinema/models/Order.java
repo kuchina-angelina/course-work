@@ -1,8 +1,7 @@
 package com.example.cinema.models;
 
-
-
-import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -24,14 +23,20 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private Date dateOfBuying;
+    private LocalDate dateOfBuying = LocalDate.now();
+
+    LocalTime time = LocalTime.now();
 
     @OneToMany(mappedBy = "order")
     @JsonIgnore
     private Set<Ticket> tickets;
 
+    public void updateOrder(Order order){
+        if (order.dateOfBuying != null){
+            this.dateOfBuying = order.dateOfBuying;
+        }
+    }
 }
-//date of buying
 
 
 // Аннотация @JoinColumn помогает нам указать столбец, который мы 

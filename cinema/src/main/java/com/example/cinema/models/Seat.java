@@ -10,8 +10,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+// import jakarta.persistence.JoinColumn;
+// import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -32,9 +32,9 @@ public class Seat {
     @Column(name = "number")
     private Integer number;
     
-    @ManyToOne
-    @JoinColumn(name = "hall_id")
-    private Hall hall;
+    // @ManyToOne
+    // @JoinColumn(name = "hall_id")
+    // private Hall hall;
 
     @OneToMany(mappedBy = "seat")
     @JsonIgnore
@@ -48,8 +48,8 @@ public class Seat {
         if (seat.number != null){
             this.number = seat.number;
         }
-        if (seat.hall != null){
-            this.hall = seat.hall;
-        }
+        // if (seat.hall != null){
+        //     this.hall = seat.hall;
+        // }
     }
 }

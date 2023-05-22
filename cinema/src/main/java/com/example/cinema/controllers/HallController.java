@@ -40,10 +40,9 @@ public class HallController {
     }
 
     @GetMapping("/getn/{number}")
-    public Hall getHallByNumber(@PathVariable Integer number) {
+    public List<Hall> getHallByNumber(@PathVariable Integer number) {
         return hallService.getHallByNumber(number);
     }
-    // return list or hall?
 
     @DeleteMapping("/delete/{id}")
     public void deleteHall(@PathVariable Integer id){

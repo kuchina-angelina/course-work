@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Cinema</title>
+        <meta charset="utf-8">
+        <meta lang="ru">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+
+    <body> 
+      <form id="ticketForm">
+        <p class="text-monospace">Введите название фильма:</p>
+        <input type="text" id = "name">     
+
+        <p class="text-monospace">Введите номер зала:</p>
+        <input type="number" id = "hall">
+
+        <p class="text-monospace">Введите ряд:</p>
+        <input type="number" id = "line">
+
+        <p class="text-monospace">Введите место:</p>
+        <input type="number" id = "number">
+
+        <script src = "js files/tickets.js"></script>
+        <p></p>
+        <button class="btn btn-outline-secondary" type="submit" >Add Ticket</button>
+        <!-- <button class="btn btn-outline-secondary" onclick="createTicket()" >Add Film</button> -->
+    </form>
+
+    <div id = "error">
+
+    </div>
+    </body>
+
+</html>

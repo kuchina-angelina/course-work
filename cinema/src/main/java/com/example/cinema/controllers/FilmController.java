@@ -43,14 +43,15 @@ public class FilmController {
         return filmService.getFilmById(id);
     }
 
-    @GetMapping("/getn/{name}")
+    @GetMapping("/name/{name}")
     public List<Film> getFilmByName(@PathVariable String name){
         log.info("FILM NAME {}", name);
         return filmService.getFilmByName(name);
     }
 
-    @GetMapping("/getg/{genre}")
+    @GetMapping("/genre/{genre}")
     public List<Film> getFilmByGenre(@PathVariable String genre){
+        log.info("TRY TO FIND {}",genre);
         return filmService.getFilmByGenre(genre);
     }
 
@@ -73,7 +74,7 @@ public class FilmController {
     }
     
     @DeleteMapping("/delete/{id}")
-    public void deleteFilm(Integer id){
+    public void deleteFilm(@PathVariable Integer id){
         filmService.deleteFilmById(id);
     }
 }

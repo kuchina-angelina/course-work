@@ -24,7 +24,7 @@ public class HallService {
         return hallRepository.findById(id).get();
     }
 
-    public Hall getHallByNumber(Integer number){
+    public List<Hall> getHallByNumber(Integer number){
         return hallRepository.findByNumber(number);
     }
 

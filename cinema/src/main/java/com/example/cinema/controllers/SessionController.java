@@ -16,17 +16,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.cinema.models.Film;
 import com.example.cinema.models.Session;
+import com.example.cinema.services.FilmService;
 import com.example.cinema.services.SessionService;
 
-import lombok.extern.slf4j.Slf4j;
+// import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
+// @Slf4j
 @RestController
 @RequestMapping("/sessions")
 public class SessionController {
     @Autowired
-    SessionService sessionService;
+    private SessionService sessionService;
+
+    @Autowired
+    private FilmService filmService;
 
     @PostMapping("/add")
     public void save(@RequestBody Session session) {
@@ -48,15 +53,16 @@ public class SessionController {
         return sessionService.getSessionByStart(start);
     }
 
-    @GetMapping("/finish/{finish}")
-    public List<Session> getSessionByFinish(@PathVariable Date finish) {
-        log.info("FINISH {}", finish);
-        return sessionService.getSessionByFinish(finish);
-    }
 
     @GetMapping("/price/{price}")
     public List<Session> getSessionByPrice(@PathVariable Float price) {
         return sessionService.getSessionByPrice(price);
+    }
+
+    @GetMapping("/film/{id}")
+    public List<Session> getSessionByFilm(@PathVariable Integer id){
+        Film film = filmService.getFilmById(id);
+        return sessionService.getSessionByFilm(film);
     }
 
     @PutMapping("/update/{id}")

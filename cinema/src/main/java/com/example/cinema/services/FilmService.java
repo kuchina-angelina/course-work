@@ -37,7 +37,9 @@ public class FilmService {
     }
     
     public List<Film> getFilmByGenre(String genre){
-        return filmRepository.findByGenre(genre);
+        return filmRepository.findByGenreContaining(genre);
     }
+
+ 
 }
 

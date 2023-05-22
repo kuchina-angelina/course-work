@@ -1,11 +1,13 @@
 package com.example.cinema.repositories;
 
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.cinema.models.Hall;
 
 public interface HallRepository extends JpaRepository<Hall,Integer> {
-    Hall findByNumber(int number);
+    List<Hall> findByNumber(int number);
     
 }

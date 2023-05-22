@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.cinema.models.Session;
 import com.example.cinema.models.Ticket;
 import com.example.cinema.repositories.TicketRepository;
 
@@ -22,6 +23,10 @@ public class TicketService {
 
     public Ticket getTicketById(Integer id){
         return ticketRepository.findById(id).get();
+    }
+
+    public List<Ticket> getTicketBySession(Session session){
+        return ticketRepository.findBySession(session);
     }
 
     public void saveTicket(Ticket ticket){

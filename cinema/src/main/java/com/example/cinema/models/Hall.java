@@ -29,10 +29,6 @@ public class Hall {
     @JsonIgnore
     private List<Session> sessions;
 
-    @OneToMany(mappedBy = "hall")
-    @JsonIgnore
-    private List<Seat> seats;
-
     public void updateHall(Hall hall){
         if (hall.number != null){
             this.number = hall.number;

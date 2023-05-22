@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Welcome</title>
+        <title>Cinema</title>
         <meta charset="utf-8">
         <meta lang="ru">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <script src = "js files/listofFilms.js"></script>
     </head>
+
     <body> 
-        <h3>try...</h3>
+      <h4>Касса кинотеатра <span class="badge badge-secondary"></span></h4>
+
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" >Home</li>
+
+          <li class="list-group-item">
+            <a class="list-group-link" href = "tickets.html">Билеты</a>
+          </li>
+
+          <li class="list-group-item">
+            <a class="list-group-link" href="films.html" >Фильмы</a>
+            <!-- <a class="list-group-link" href="registration.html" >Фильмы</a> -->
+
+          </li> 
+
+          <li class="list-group-item">
+            <a class="list-group-link" href="sessions.html" >Ceансы</a>
+          </li> 
+
+          <li class="list-group-item">
+            <a class="list-group-link" href="createSession.html" >fnii</a>
+          </li> 
+           
+
+        </ul>
+      </div>
+
+      
+
+      
+
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link disabled" >Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="tickets.html">Билеты</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="films.html">Фильмы</a>
+                  </li>
+              </ul>
+            </div>
+          </nav> -->
+
+
         <!-- <form>
             <lable>Name</lable>
             <input type="text" name="firstName">
@@ -17,11 +69,13 @@
             // alert(firstName)
             console.log(firstName)
         </script> -->
-        <script>
+        <!-- <script>
             let data  = fetch('http://localhost:8080/films/getn/java') // обращение по адресу как в посмане
             .then(response => response.json()) // переделывает данные в json
             // .then(clients => alert(clients)); // выводит список из object Object
             .then(clients => console.log(clients)) // нормально выводит в консоль браузера и пошел запрос через hibernate
-        </script>
-    </body>
-</html>
+        </script> -->
+    <!-- </body>
+</html> -->
+
+

@@ -1,14 +1,10 @@
 package com.example.cinema.models;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+// import com.fasterxml.jackson.annotation.JsonIgnore;
 
-// import jakarta.annotation.Nullable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,30 +24,37 @@ public class Ticket {
     private int id;
 
     @Column(name = "taken")
-    private Boolean taken;
+    private Boolean taken = false;
 
-    
     @ManyToOne
-    @JoinColumn(name = "seat_id", nullable=true)
-    @JsonIgnore
+    @JoinColumn(name = "seat_id")
     private Seat seat;
 
     @ManyToOne
-    @JoinColumn(name = "session_id", nullable=true)
-    @JsonIgnore
+    @JoinColumn(name = "session_id")
     private Session session;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "order_id", nullable = true)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "order_id")
     private Order order;
 
+
     public void updateTicket(Ticket ticket){
-        if (ticket.taken == true || ticket.taken == false){
+        if (ticket.taken == true | ticket.taken == false){
             this.taken = ticket.taken;
+        }
+
+        if(ticket.seat != null){
+            this.seat = ticket.seat;
+        }
+
+        if(ticket.session != null){
+            this.session = ticket.session;
+        }
+
+        if(ticket.order != null){
+            this.order = ticket.order;
         }
     }
 
 }
-//how to give type boolean 

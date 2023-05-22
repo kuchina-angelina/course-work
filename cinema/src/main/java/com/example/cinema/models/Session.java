@@ -1,6 +1,7 @@
 package com.example.cinema.models;
 
 import java.sql.Date;
+import java.sql.Time;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -30,13 +31,14 @@ public class Session {
     private int id;
 
     @Column(name = "start")
-    private Date start; //дата + время ? тип данных ?
-
-    @Column(name = "finish")
-    private Date finish;
+    private Date start; 
 
     @Column(name = "price")
     private Float price;
+
+    private Time timeStart;
+
+    private Time timeEnd;
 
     @ManyToOne
     @JoinColumn(name = "film_id")
@@ -55,13 +57,9 @@ public class Session {
             this.start = session.start;
         }
 
-        if (session.finish != null){
-            this.finish = session.finish;
-        }
-
         if (session.price != null){
             this.price = session.price;
-            //foreign keys ??? 
+            
         }
     }
 }

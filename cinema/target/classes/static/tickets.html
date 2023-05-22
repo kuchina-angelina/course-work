@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cinema</title>
+        <meta charset="utf-8">
+        <meta lang="ru">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <!-- <script src = "js files/tickets.js"></script> -->
+    </head>
+    <body> 
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link"href="index.html"> Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled">Билеты</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+          <p class="text-monospace">Для отображения списка всех билетов нажмите на кнопку 
+            <button type="button" onclick="showTickets()">Билеты</button>
+            <!-- сделать сортировку по дате -->
+          </p>
+
+          <p class="text-monospace">Новый билет 
+            <!-- <button type="button" onclick="createTickets.html">Билеты</button> -->
+            <button onclick="window.location.href = 'createTicket.html'" >Билеты</button>
+
+          </p>
+
+          <ul id = "tickets">
+            <script src = "js files/tickets.js"></script>
+          </ul>
+
+
+
+          
+    </body>
+</html>

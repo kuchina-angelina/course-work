@@ -1,13 +1,16 @@
 package com.example.cinema.controllers;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-// import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,18 +49,18 @@ public class OrderController {
         orderService.deleteOrder(id);
     }
 
-    // @PutMapping("/update/{id}")
-    // public ResponseEntity<?> updateFilm(@RequestBody Order order, @PathVariable Integer id){
-    //     try{
-    //         Order orders = orderService.getOrderById(id);
-    //         orders.updat
-    //         orderService.saveHall(baseHall);
-    //         return new ResponseEntity<>(HttpStatus.OK);
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateFilm(@RequestBody Order order, @PathVariable Integer id){
+        try{
+            Order orders = orderService.getOrderById(id);
+            orders.updateOrder(orders);
+            orderService.saveOrder(orders);
+            return new ResponseEntity<>(HttpStatus.OK);
 
-    //     } catch(NoSuchElementException e){
-    //         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    //     }
-    // }
+        } catch(NoSuchElementException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
     
 }
