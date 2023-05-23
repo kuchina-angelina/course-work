@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <meta lang="ru">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-        <script src = "js files/listofFilms.js"></script>
     </head>
 
     <body>
@@ -15,8 +14,13 @@
                 <li class="nav-item active">
                   <a class="nav-link"href="index.html"> Home <span class="sr-only"></span></a>
                 </li>
+
                 <li class="nav-item">
                   <a class="nav-link disabled">Сеансы</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link " href = "createSession.html" >Создать сеанс</a>
                 </li>
               </ul>
             </div>
@@ -24,7 +28,9 @@
 
 
           <p class="text-monospace">Для отображения всех сеансов на сегодня
-            <button type="button" onclick="showFilms()">Сеансы</button>
+            <button type="button" onclick="showSessionsByToday()">Сеансы</button>
           </p>
+          <script src = "js files/sessions.js"></script>
+
     </body>
 </html>
