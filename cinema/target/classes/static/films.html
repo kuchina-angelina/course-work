@@ -9,7 +9,6 @@
     </head>
 
     <body> 
-
         <nav class="navbar navbar-expand-lg navbar-light bg-light">          
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
@@ -19,18 +18,23 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" onclick="showFilms()">Фильмы</a>
+                    <a class="nav-link disabled">Фильмы</a>
                 </li>
 
                 <li class="nav-item">
                   <a class="nav-link" href="createFilm.html">Добавить фильм</a>
               </li>
 
+              
+
+
               </ul>
             </div>
           </nav>
 
-          <div class = "inputFilms">
+          
+
+          <div id = "inputFilms">
             <p class="text-monospace">Введите название фильма</p>
             <input type="text" id = "name">
             <button type="button" class="btn btn-info" onclick="showFilmsByName()">Поиск</button>
@@ -40,12 +44,10 @@
             <input type="text" id = "genre">
             <button type="button" class="btn btn-info" onclick="showFilmsByGenre()">Поиск</button>
 
-          </div>
-
           <p class="text-monospace">Для отображения списка всех фильмов нажмите на кнопку 
-             <!-- btn btn-primary btn-sm -->
             <button type="button" class="btn btn-info" onclick="showFilms()">Фильмы</button>
           </p>
+        </div>
 
           <ul id = "script">
             <script src = "js files/films.js"></script>
@@ -54,6 +56,12 @@
           <div id = "error">
 
           </div>
+
+          <div id = "update">
+            
+                  
+          </div>
+       
 
           
     </body>

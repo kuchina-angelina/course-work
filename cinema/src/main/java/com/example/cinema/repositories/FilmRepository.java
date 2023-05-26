@@ -8,6 +8,6 @@ import com.example.cinema.models.Film;
 
 public interface FilmRepository extends JpaRepository<Film, Integer>{
     List<Film> findByName(String name);
-    List<Film> findByGenreContaining(String genre);
+    List<Film> findByGenreContaining(String genre); //???
 
 }

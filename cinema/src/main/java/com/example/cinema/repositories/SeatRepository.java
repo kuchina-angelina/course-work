@@ -8,5 +8,6 @@ import com.example.cinema.models.Seat;
 
 public interface SeatRepository extends JpaRepository<Seat,Integer>{
     List<Seat> findByLine(int line);
+    List<Seat> findByLineAndNumber(int line,int seat);
     
 }

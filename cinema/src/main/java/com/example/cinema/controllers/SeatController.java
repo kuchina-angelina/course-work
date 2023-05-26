@@ -44,6 +44,11 @@ public class SeatController {
         return seatService.getSeatByLine(line);  
     }
 
+    @GetMapping("get/{line}/{number}")
+    public List<Seat> getByLineAndNumber(@PathVariable Integer line, @PathVariable Integer number){
+        return seatService.getSeatByLineAndNumber(line, number);
+    }
+
     @PutMapping("/update/{id}")
     public ResponseEntity<?> updateFilm(@RequestBody Seat seat, @PathVariable Integer id){
         try{

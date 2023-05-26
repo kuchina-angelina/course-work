@@ -4,7 +4,12 @@ import java.sql.Date;
 import java.sql.Time;
 import java.util.List;
 
+// import org.hibernate.annotations.OnDelete;
+// import org.hibernate.annotations.OnDeleteAction;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+// import jakarta.persistence.CascadeType;
 
 // import javax.print.attribute.standard.DateTimeAtCompleted;
 // import javax.print.attribute.standard.DateTimeAtCreation;
@@ -40,7 +45,7 @@ public class Session {
 
     private Time timeEnd;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "film_id")
     private Film film;
 
@@ -61,7 +66,25 @@ public class Session {
             this.price = session.price;
             
         }
+
+        if (session.timeStart != null){
+            this.timeStart = session.timeStart;
+            
+        }
+
+        if (session.timeEnd != null){
+            this.timeEnd = session.timeEnd;
+            
+        }
+
+        if (session.film != null){
+            this.film = session.film;
+            
+        }
+
+        if (session.hall != null){
+            this.hall = session.hall;
+            
+        }
     }
 }
-
-// add time

@@ -36,4 +36,7 @@ public class SeatService {
         return seatRepository.findById(id).get();
     }
     
+    public List<Seat> getSeatByLineAndNumber(Integer line, Integer number ){
+        return seatRepository.findByLineAndNumber(line, number);
+    }
 }

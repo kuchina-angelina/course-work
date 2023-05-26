@@ -2,6 +2,9 @@ package com.example.cinema.models;
 
 import java.util.List;
 
+// import org.hibernate.annotations.OnDelete;
+// import org.hibernate.annotations.OnDeleteAction;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -34,6 +37,7 @@ public class Film {
 
     @OneToMany(mappedBy = "film")
     @JsonIgnore
+    // @OnDelete(action = OnDeleteAction.CASCADE )
     private List<Session> sessions;
 
     public void updateFilm(Film film){

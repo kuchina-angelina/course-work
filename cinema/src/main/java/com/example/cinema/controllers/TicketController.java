@@ -60,7 +60,7 @@ public class TicketController {
         return ticketService.getTicketByTaken(taken);
     }
 
-    @GetMapping("/get/ticket/{id}")
+    @GetMapping("/get/ticket/{id}") //find ticket by name
     public List<Ticket> getTicketsByFilmName(@PathVariable Integer id) {
         Film film = filmService.getFilmById(id);
         List<Session> sessions = sessionService.getSessionByFilm(film);
@@ -90,6 +90,7 @@ public class TicketController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    
     
     @DeleteMapping("/delete/{id}")
     public void deleteTicket(@PathVariable Integer id){

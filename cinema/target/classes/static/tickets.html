@@ -19,20 +19,31 @@
                 <li class="nav-item">
                   <a class="nav-link disabled">Билеты</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="createTicket.html">Создать билет</a>
+                </li>
               </ul>
             </div>
           </nav>
 
           <p class="text-monospace">Для отображения списка всех билетов нажмите на кнопку 
-            <button type="button" onclick="showTickets()">Билеты</button>
-            <!-- сделать сортировку по дате -->
-          </p>
+            <button class="btn btn-outline-secondary" onclick="showTickets()">Билеты</button>
+          </p>  
+          
+          <p class="text-monospace">Для отображения списка билетов по дате 
+            <input type="date" id = "date">
+            <button class="btn btn-outline-secondary" onclick="showTicketsByDate()">Билеты</button>
+          </p>   
 
-          <p class="text-monospace">Новый билет 
-            <!-- <button type="button" onclick="createTickets.html">Билеты</button> -->
-            <button onclick="window.location.href = 'createTicket.html'" >Билеты</button>
+          <div id = "bought">
+            <p>Отобразить купленные билеты
+            <button class="btn btn-outline-secondary" onclick="showBoughtTickets()" >Bought</button></p>
+  
+  
+          </div>
 
-          </p>
+        
+
 
           <ul id = "tickets">
             <script src = "js files/tickets.js"></script>
